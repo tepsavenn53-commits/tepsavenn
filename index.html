@@ -204,9 +204,9 @@
         <div class="text-xs text-slate-700 space-y-2 flex-grow font-content">
           <h4 class="font-bold text-emerald-900 font-muol">💡 គន្លឹះវាយបញ្ចូលពិន្ទុជាចង្កោមតាមរយៈ Excel យ៉ាងរហ័ស៖</h4>
           <p class="leading-relaxed">
-            ១. លោកគ្រូអ្នកគ្រូអាចទាញយកគំរូដោយចុចប៊ូតុង <strong class="text-teal-800">«ទាញយកគំរូ Excel»</strong> ឬប្រើប៊ូតុង <strong class="text-emerald-800">«ទាញចេញ Excel (.xlsx)»</strong> ដើម្បីទទួលបានតារាងឈ្មោះសិស្សស្រាប់។<br />
+            ១. លោកគ្រូអ្នកគ្រូអាចទាញយកគំរូដោយចុចប៊ូតុង <strong>«ទាញយកគំរូ Excel»</strong> ឬប្រើប៊ូតុង <strong>«ទាញចេញ Excel (.xlsx)»</strong> ដើម្បីទទួលបានតារាងឈ្មោះសិស្សស្រាប់។<br />
             ២. បើកឯកសារ Excel នោះ រួចបំពេញព័ត៌មានសិស្ស គូសសញ្ញា ✓ ក្នុងតារាងចរិយាសម្បទា (សន្លឹកទី២) និងបំពេញពិន្ទុ ០-៤ ក្នុងតារាងបំណិន (សន្លឹកទី៣)។<br />
-            ៣. រក្សាទុក រួចចុចប៊ូតុង <strong class="text-teal-800">«បញ្ចូលពី Excel (.xlsx)»</strong> ដើម្បីធ្វើបច្ចុប្បន្នភាពចូលក្នុងកម្មវិធីក្នុងពេលតែ ១វិនាទី!
+            ៣. រក្សាទុក រួចចុចប៊ូតុង <strong>«បញ្ចូលពី Excel (.xlsx)»</strong> ដើម្បីធ្វើបច្ចុប្បន្នភាពចូលក្នុងកម្មវិធីក្នុងពេលតែ ១វិនាទី!
           </p>
         </div>
       </div>
@@ -379,7 +379,7 @@
     </div>
 
     <!-- ==================== TAB 2: វាយតម្លៃចរិយាសម្បទា ==================== -->
-    <div id="content-behavior" class="tab-content space-y-6 hidden font-content animate-none">
+    <div id="content-behavior" class="tab-content space-y-6 hidden font-content">
       <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-100 pb-4">
           <div>
@@ -400,9 +400,9 @@
           </div>
         </div>
 
-        <div id="behavior-main-panel" class="mt-6 space-y-6 animate-none">
+        <div id="behavior-main-panel" class="mt-6 space-y-6">
           <!-- បន្ទះពិន្ទុសរុប -->
-          <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-100 flex items-center justify-between font-content animate-none">
+          <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-100 flex items-center justify-between font-content">
             <div>
               <p class="text-xs text-emerald-800 font-bold uppercase">ពិន្ទុចរិយាសម្បទារួម</p>
               <h4 class="text-3xl font-extrabold text-teal-900 mt-1 font-mono">
@@ -416,7 +416,7 @@
           </div>
 
           <!-- បញ្ជីសូចនាករ ៥ស្ -->
-          <div id="behavior-categories-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 font-content animate-none">
+          <div id="behavior-categories-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 font-content">
             <!-- ជួរស្អាត សុភាព របៀប ទៀងពេល សម្មាធិ នឹងរចនាស្វ័យប្រវត្តតាម JS -->
           </div>
         </div>
@@ -493,7 +493,7 @@
           <select id="report-student-selector" onchange="onActiveStudentChange(this.value)" class="px-2.5 py-1.5 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 font-semibold cursor-pointer">
             <!-- បញ្ជីសិស្ស -->
           </select>
-          <button id="btn-ai-evaluate-report" onclick="triggerGeminiEvalCurrent()" class="inline-flex items-center px-3 py-1.5 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-md shadow-sm transition-all cursor-pointer font-bold animate-none">
+          <button id="btn-ai-evaluate-report" onclick="triggerGeminiEvalCurrent()" class="inline-flex items-center px-3 py-1.5 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-md shadow-sm transition-all cursor-pointer font-bold">
             <i data-lucide="sparkles" class="w-3.5 h-3.5 mr-1.5 font-bold animate-none"></i>✨ បង្កើតមតិយោបល់ដោយ AI
           </button>
         </div>
@@ -502,7 +502,7 @@
           <button onclick="downloadAllStudentsHTML()" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-650 hover:to-indigo-650 text-white text-xs font-bold rounded-md shadow-md transition-all border border-indigo-600 cursor-pointer font-bold animate-none">
             <i data-lucide="download" class="w-4 h-4 mr-2"></i>ទាញយកគ្រប់សិស្សទាំងអស់ (.html)
           </button>
-          <button onclick="downloadCurrentStudentHTML()" class="inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded-md shadow-md transition-all border border-amber-500 cursor-pointer font-bold">
+          <button onclick="downloadCurrentStudentHTML()" class="inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded-md shadow-md transition-all border border-amber-500 cursor-pointer font-bold animate-none">
             <i data-lucide="download" class="w-4 h-4 mr-2"></i>ទាញយកសិស្សបច្ចុប្បន្ន (.html)
           </button>
           <button onclick="handlePrint()" class="inline-flex items-center px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold rounded-md shadow-md transition-all border border-teal-500 cursor-pointer font-bold">
@@ -512,12 +512,12 @@
       </div>
 
       <!-- សារណែនាំបោះពុម្ព -->
-      <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl print:hidden flex items-start gap-3 animate-none">
+      <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl print:hidden flex items-start gap-3">
         <i data-lucide="info" class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0 animate-none"></i>
-        <div class="text-xs text-amber-800 leading-relaxed font-content">
+        <div class="text-xs text-amber-800 leading-relaxed font-content font-bold">
           <p class="font-bold font-content font-bold">⚠️ ការណែនាំពិសេសសម្រាប់ការរក្សាទុកជា PDF (រឹមក្រដាស 1cm ពេញមួយទំព័រ)៖</p>
           <p class="mt-1 font-content">
-            លោកគ្រូអ្នកគ្រូអាចចុចប៊ុងតុង <strong>«ទាញយកគ្រប់សិស្សទាំងអស់ (.html)»</strong> ពណ៌ស្វាយ ដើម្បីទាញយកឯកសារសន្លឹកវាយតម្លៃរួមរបស់សិស្សទាំងអស់ក្នុងពេលតែមួយ। បន្ទាប់មក សូមបើកឯកសារដែលទាញយកបាននោះ វានឹងបើកផ្ទាំងបោះពុម្ពរបស់កុំព្យូទ័រ **Microsoft Print to PDF** ស្វ័យប្រវត្តិតែមួយទំព័រគត់សម្រាប់សិស្សម្នាក់ៗ ជាមួយរឹមក្រដាស 1cm យ៉ាងស្រស់ស្អាតបំផុត!
+            លោកគ្រូអ្នកគ្រូអាចចុចប៊ុងតុង <strong>«ទាញយកគ្រប់សិស្សទាំងអស់ (.html)»</strong> ពណ៌ស្វាយ ដើម្បីទាញយកឯកសារសន្លឹកវាយតម្លៃរួមរបស់សិស្សទាំងអស់ក្នុងពេលតែមួយ។ បន្ទាប់មក សូមបើកឯកសារដែលទាញយកបាននោះ វានឹងបើកផ្ទាំងបោះពុម្ពរបស់កុំព្យូទ័រ **Microsoft Print to PDF** ស្វ័យប្រវត្តិតែមួយទំព័រគត់សម្រាប់សិស្សម្នាក់ៗ ជាមួយរឹមក្រដាស 1cm យ៉ាងស្រស់ស្អាតបំផុត!
           </p>
         </div>
       </div>
@@ -544,7 +544,7 @@
             </div>
           </div>
           <div class="flex items-center gap-2 text-xs font-content font-bold animate-none">
-            <span class="font-bold text-slate-600 font-content font-bold font-bold font-bold font-bold font-bold font-bold font-bold">ជ្រើសរើសសិស្ស៖</span>
+            <span class="font-bold text-slate-600 font-content font-bold font-bold font-bold font-bold font-bold font-bold">ជ្រើសរើសសិស្ស៖</span>
             <select id="ai-student-selector" onchange="onActiveStudentChange(this.value)" class="px-2.5 py-1.5 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500 font-semibold cursor-pointer">
               <!-- បញ្ជីសិស្ស -->
             </select>
@@ -574,7 +574,7 @@
                 <!-- ចងដោយ JS -->
               </div>
               <div class="pt-2 border-t border-slate-200">
-                <button id="btn-call-gemini" onclick="generateStudentEvaluationDirect()" class="w-full py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-bold shadow-md transition-all flex items-center justify-center space-x-1.5 cursor-pointer font-bold">
+                <button id="btn-call-gemini" onclick="generateStudentEvaluationDirect()" class="w-full py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-bold shadow-md transition-all flex items-center justify-center space-x-1.5 cursor-pointer font-bold font-bold">
                   <i data-lucide="sparkles" class="w-4 h-4 mr-1"></i>
                   <span>✨ បញ្ជា Gemini ឱ្យសរសេរមតិ</span>
                 </button>
@@ -584,7 +584,7 @@
 
           <!-- លទ្ធផលវិភាគ និងប្រអប់មតិយោបល់ -->
           <div class="lg:col-span-8 space-y-3 font-content font-bold animate-none">
-            <div class="flex items-center justify-between font-bold">
+            <div class="flex items-center justify-between font-bold animate-none">
               <h4 class="font-bold text-sm text-slate-800 flex items-center gap-1.5 font-muol font-bold font-bold">
                 <i data-lucide="award" class="w-4 h-4 text-amber-500"></i>
                 <span>លទ្ធផលវាយតម្លៃរួមដោយ ✨ Gemini AI</span>
@@ -1314,7 +1314,7 @@
       });
     }
 
-    // ==================== TAB 3: បំណិនសម្បទា ====================
+    // ==================== TAB 3: វាយតម្លៃបំណិនសម្បទា ====================
     function renderSkillsTab() {
       const nameDisplay = document.getElementById('skills-active-student-name');
       if (!currentStudent) {
@@ -1648,7 +1648,7 @@
     <strong>សឹកកិច្ចការសិស្សទាំងអស់ (${activeList.length} នាក់) រៀបចំរួមគ្នាជារឹម 1cm រួចរាល់!</strong>
     <button onclick="window.print()" style="background: #10b981; border: none; color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold; cursor: pointer;">បោះពុម្ពគ្រប់ទំព័រ</button>
   </div>
-  \${allPages}
+  ${allPages}
   ${scriptOpen}
     window.onload = function() {
       setTimeout(function() {
@@ -1982,8 +1982,6 @@
           return row;
         });
         const ws3 = window.XLSX.utils.json_to_sheet(skillData);
-        window.XLSX.utils.book_append_sheet(wb, ws3, "ទិន្នន័យបំណិនសម្បទាលម្អិត");
-
         window.XLSX.writeFile(wb, "MoEYS_Student_Scores_2026.xlsx");
         triggerToast("ទាញទិន្នន័យចេញជា Excel ជោគជ័យ!");
       } catch (err) {
@@ -2154,6 +2152,7 @@
       student.skills[activityId] = parseInt(value, 10);
     }
 
+    // អនុគមន៍ដោះស្រាយបញ្ហា handlePrint, toggleBehaviorItemDirect, updateSkillScoreDirect
     function handlePrint() {
       try {
         window.focus();
@@ -2187,10 +2186,8 @@
         return;
       }
 
-      // រក្សាទុក URL ចូល LocalStorage
       localStorage.setItem('moeys_google_sheet_url_v5', webAppUrl);
 
-      // បង្ហាញសញ្ញាកំពុងបញ្ជូនទិន្នន័យ (Loading state on button)
       const btn = document.getElementById('header-btn-sync');
       const originalHTML = btn.innerHTML;
       btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 mr-1.5 animate-spin"></i>កំពុងបញ្ជូន...`;
@@ -2205,7 +2202,6 @@
       };
 
       try {
-        // ប្រើប្រាស់ mode: 'no-cors' ដើម្បីទប់ស្កាត់បញ្ហា CORS ប្លុកពី Google Apps Script ពេលហៅចេញពី client browser iFrame
         await fetch(webAppUrl, {
           method: 'POST',
           mode: 'no-cors',
@@ -2215,7 +2211,6 @@
           body: JSON.stringify(payload)
         });
 
-        // ដោយសារ mode no-cors មិនអាចអាន response text បាន យើងនឹងពន្យារពេល ១.៥វិនាទី ដើម្បីបង្ហាញការសម្រេចបានជោគជ័យ
         setTimeout(() => {
           btn.innerHTML = originalHTML;
           btn.disabled = false;
@@ -2244,7 +2239,7 @@
       triggerGeminiEvalCurrent, downloadAllStudentsHTML, downloadCurrentStudentHTML,
       handlePrint, generateStudentEvaluationDirect, clearCurrentAiComment,
       copyPARTSPrompt, copyAiCommentDirect, toggleStudentGenderFast, handleClassFilterChange,
-      syncToGoogleSheets
+      syncToGoogleSheets, selectStudent, switchTabWithStudent, deleteStudentDirect, onCommentTextareaChange
     };
     Object.keys(publicFunctions).forEach(key => {
       window[key] = publicFunctions[key];
