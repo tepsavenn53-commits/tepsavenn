@@ -408,7 +408,7 @@
           <div>
             <h3 class="text-base font-bold text-slate-800 flex items-center gap-1.5 font-muol">
               <i data-lucide="award" class="w-5 h-5 text-emerald-600"></i>
-              <span>វាយតម្លៃចរិយាសម្បទា (៥ស្) សម្រាប់សិស្ស៖ <span id="behavior-active-student-name" class="text-teal-700 font-bold font-content font-bold"></span></span>
+              <span>វាយតម្លៃចរិយាសម្បទា (៥ សកម្មភាព) សម្រាប់សិស្ស៖ <span id="behavior-active-student-name" class="text-teal-700 font-bold font-content font-bold"></span></span>
             </h3>
             <p class="text-xs text-slate-500 mt-1 font-content">
               សូមគូសធីក (✓) លើសកម្មភាព ឬអាកប្បកិរិយាដែលសិស្សបានអនុវត្តល្អ។ ប្រព័ន្ធនឹងគណនាពិន្ទុដោយស្វ័យប្រវត្តិតាមការណែនាំរបស់ក្រសួង។
@@ -438,7 +438,7 @@
             </div>
           </div>
 
-          <!-- បញ្ជីសូចនាករ ៥ស្ -->
+          <!-- បញ្ជីសូចនាករ ៥ សកម្មភាព -->
           <div id="behavior-categories-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 font-content">
             <!-- ជួរស្អាត សុភាព របៀប ទៀងពេល សម្មាធិ នឹងរចនាស្វ័យប្រវត្តតាម JS -->
           </div>
@@ -1742,9 +1742,9 @@
       const sScore = calculateSkillScore(currentStudent);
       details.innerHTML = `
         <p>• សិស្ស៖ <span class="text-slate-900 font-content">${currentStudent.nameKh}</span> (${currentStudent.gender})</p>
-        ${currentStudent.academicScore !== undefined && currentStudent.academicScore !== null ? `<p>• វិជ្ជាសម្បទា៖ <span class="text-slate-900">${currentStudent.academicScore}/10 ផ</span></p>` : ''}
-        <p>• ចរិយាសម្បទា (៥)៖ <span class="text-slate-900">${bScore}/60 ផ</span></p>
-        <p>• បំណិនសម្បទា៖ <span class="text-slate-900">${sScore}/72 ផ</span></p>
+        ${currentStudent.academicScore !== undefined && currentStudent.academicScore !== null ? `<p>• វិជ្ជាសម្បទា៖ <span class="text-slate-900">${currentStudent.academicScore}/10 ផ្នែក</span></p>` : ''}
+        <p>• ចរិយាសម្បទា (៥)៖ <span class="text-slate-900">${bScore}/60 ផ្នែគ</span></p>
+        <p>• បំណិនសម្បទា៖ <span class="text-slate-900">${sScore}/72 ផ្នែគ</span></p>
       `;
       
       document.getElementById('ai-generated-comment-box').value = currentStudent.aiComment || "";
