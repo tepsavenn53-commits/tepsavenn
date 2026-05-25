@@ -1936,29 +1936,13 @@
             "អត្តលេខ": "ST-2026-001",
             "ឈ្មោះសិស្ស": "សុខ ជា",
             "ភេទ": "ប្រុស",
-            "ថ្នាក់ទី": classConfig.className || "ថ្នាក់ទី ៦ ក",
-            "ចរិយាសម្បទា_ស្អាត": 9,
-            "ចរិយាសម្បទា_សុភាព": 10,
-            "ចរិយាសម្បទា_របៀប": 15,
-            "ចរិយាសម្បទា_ទៀងពេល": 5,
-            "ចរិយាសម្បទា_សម្មាធិ": 7,
-            "ពិន្ទុចរិយាសម្បទាសរុប": 46,
-            "ពិន្ទុបំណិនសម្បទាសរុប": 50,
-            "មតិវាយតម្លៃ_AI": ""
+            "ថ្នាក់ទី": classConfig.className || "ថ្នាក់ទី ៦ ក"
           },
           {
             "អត្តលេខ": "ST-2026-002",
             "ឈ្មោះសិស្ស": "ចាន់ ធីតា",
             "ភេទ": "ស្រី",
-            "ថ្នាក់ទី": classConfig.className || "ថ្នាក់ទី ៦ ក",
-            "ចរិយាសម្បទា_ស្អាត": 0,
-            "ចរិយាសម្បទា_សុភាព": 0,
-            "ចរិយាសម្បទា_របៀប": 0,
-            "ចរិយាសម្បទា_ទៀងពេល": 0,
-            "ចរិយាសម្បទា_សម្មាធិ": 0,
-            "ពិន្ទុចរិយាសម្បទាសរុប": 0,
-            "ពិន្ទុបំណិនសម្បទាសរុប": 0,
-            "មតិវាយតម្លៃ_AI": ""
+            "ថ្នាក់ទី": classConfig.className || "ថ្នាក់ទី ៦ ក"
           }
         ];
         const ws1 = window.XLSX.utils.json_to_sheet(summaryPlaceholder);
@@ -2080,6 +2064,16 @@
             return;
           }
 
+          // បន្ថែមការត្រួតពិនិត្យ (Validation) ឱ្យប្រាកដថាមានជួរឈរត្រឹមត្រូវ ១០០%
+          const firstRowKeys = Object.keys(summaryRows[0] || {});
+          const hasRequiredColumns = firstRowKeys.some(key => key.trim() === "អត្តលេខ") && 
+                                     firstRowKeys.some(key => key.trim() === "ឈ្មោះសិស្ស");
+          
+          if (!hasRequiredColumns) {
+            triggerToast("ទម្រង់មិនត្រឹមត្រូវ! សូមប្រាកដថាមានជួរឈរ៖ អត្តលេខ, ឈ្មោះសិស្ស, ភេទ, ថ្នាក់ទី", "error");
+            return;
+          }
+
           let behaviorRowsMap = {};
           if (wb.SheetNames.length > 1) {
             const sheet2Name = wb.SheetNames[1];
@@ -2105,12 +2099,18 @@
           }
 
           const importedStudents = summaryRows.map((row, idx) => {
-            // ចាប់យកតម្លៃពី Excel តាមឈ្មោះជួរឈរជាក់លាក់ត្រឹមត្រូវ ១០០% (អត្តលេខ, ឈ្មោះសិស្ស, ភេទ, ថ្នាក់ទី)
-            const studentId = row["អត្តលេខ"] || `ST-${Date.now()}-${idx}`;
-            const nameKh = row["ឈ្មោះសិស្ស"] || "សិស្សគ្មានឈ្មោះ";
-            const gender = row["ភេទ"] || "ប្រុស"; 
-            const studentClass = row["ថ្នាក់ទី"] || classConfig.className;
-            const aiComment = row["មតិវាយតម្លៃ_AI"] || "";
+            // អនុគមន៍ជំនួយសម្រាប់ចាប់យកតម្លៃពីជួរឈរទោះមានការដកឃ្លាលើសក៏ដោយ (Robust matching)
+            const getColValue = (colName) => {
+              const key = Object.keys(row).find(k => k.trim() === colName);
+              return key ? row[key] : undefined;
+            };
+
+            // ចាប់យកតម្លៃពី Excel តាមឈ្មោះជួរឈរជាក់លាក់ទាំង ៤
+            const studentId = getColValue("អត្តលេខ") || `ST-${Date.now()}-${idx}`;
+            const nameKh = getColValue("ឈ្មោះសិស្ស") || "សិស្សគ្មានឈ្មោះ";
+            const gender = getColValue("ភេទ") || "ប្រុស"; 
+            const studentClass = getColValue("ថ្នាក់ទី") || classConfig.className;
+            const aiComment = getColValue("មតិវាយតម្លៃ_AI") || "";
             const nameEn = ""; // លុបឈ្មោះឡាតាំងចោលតាមទម្រង់ថ្មី
 
             const behaviorObj = { cleanliness: [], politeness: [], orderliness: [], punctuality: [], mindfulness: [] };
